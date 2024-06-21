@@ -1,0 +1,55 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.custom-toolbar {
+  background-color: #007acc;
+  color: white;
+}
+
+.menu-item {
+  display: inline-block; /* Faz com que cada item ocupe apenas o espaço necessário */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte em 20% */
+  text-align: center; /* Centraliza o texto dentro de cada item */
+  padding: 10px 20px; /* Adiciona espaçamento ao redor dos itens */
+  margin: 0 10px; /* Adiciona espaço entre os itens */
+}
+
+.menu {
+  display: flex; /* Usa flexbox para centralizar os itens */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  list-style: none; /* Remove os marcadores de lista */
+  padding: 0; /* Remove o preenchimento padrão */
+  margin: 0; /* Remove a margem padrão */
+}
+.center-content {
+  display: flex; /* Usa flexbox para alinhar o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  height: 100%; /* Garante que a div ocupe 100% da altura do seu contêiner pai */
+  width: 100%; /* Opcional: Garante que a div ocupe 100% da largura do seu contêiner pai */
+  text-align: center; /* Centraliza o texto dentro da div */
+}
+.custom-sidenav {
+  width: 150px; /* Define a largura desejada */
+}
+
+.mat-sidenav-container {
+  width: 100%; /* Garante que o container ocupe toda a largura disponível */
+  height: 100%; /* Garante que o container ocupe toda a altura disponível */
+}

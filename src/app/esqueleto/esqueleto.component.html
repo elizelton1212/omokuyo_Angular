@@ -1,0 +1,66 @@
+<mat-sidenav-container class="sidenav-container " >
+  <mat-sidenav #drawer class="sidenav custom-sidenav " fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Logo</mat-toolbar>
+    <mat-nav-list>
+      <hr>
+      <div >
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon >public</mat-icon> <span mat-list-item>Viagem </span></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Agendar</button>
+          <button mat-menu-item>Pacotes</button>
+          <button mat-menu-item>Reservas</button>
+          <button mat-menu-item>Pagamentos</button>
+
+
+        </mat-menu>
+        <br>
+      </div>
+
+
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu1"><mat-icon >hotel</mat-icon> <span mat-list-item>Hoteis</span></button>
+        <mat-menu #menu1="matMenu">
+          <button mat-menu-item> Lista de Hoteis</button>
+          <button mat-menu-item>Reserva de quartos</button>
+        </mat-menu>
+      </div>
+
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu2"><mat-icon >restaurant</mat-icon> <span mat-list-item>Restaurantes</span></button>
+        <mat-menu #menu2="matMenu">
+          <button mat-menu-item> Lista de Reestaurantes</button>
+          <button mat-menu-item>Menu</button>
+          <button mat-menu-item>Reserva</button>
+
+        </mat-menu>
+      </div>
+
+
+
+
+
+      <a mat-list-item routerLink="/dashboard">Link 1</a>
+      <a mat-list-item href="#"></a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="custom-toolbar">
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <span>Omokuyo</span>
+    </mat-toolbar>
+  <ng-content></ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

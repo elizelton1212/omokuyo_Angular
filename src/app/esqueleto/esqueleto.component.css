@@ -53,3 +53,14 @@
   width: 100%; /* Garante que o container ocupe toda a largura disponível */
   height: 100%; /* Garante que o container ocupe toda a altura disponível */
 }
+
+.altura-menu-item{
+  height: 20%;
+}
+
+.circular-image {
+  width: 120px; /* Defina a largura desejada para a imagem */
+  height: 70px; /* Defina a altura desejada para a imagem */
+  border-radius: 50%; /* Aplica um raio de borda de 50% para criar um formato circular */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço do elemento sem distorção */
+}

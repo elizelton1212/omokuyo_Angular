@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Logo</mat-toolbar>
+    <mat-toolbar><img src="assets/travel.png" class="circular-image" alt=""></mat-toolbar>
     <mat-nav-list>
       <hr>
       <div >
@@ -38,13 +38,52 @@
         </mat-menu>
       </div>
 
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu3"><mat-icon >event</mat-icon> <span mat-list-item>Evento</span></button>
+        <mat-menu #menu3="matMenu">
+          <button mat-menu-item class="altura-menu-item"> Lista de Eventos</button>
+          <button mat-menu-item>Reserva</button>
+
+        </mat-menu>
+      </div>
+
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu4"><mat-icon >commute</mat-icon> <span mat-list-item>Transporte</span></button>
+        <mat-menu #menu4="matMenu">
+          <button mat-menu-item class="altura-menu-item"  [mat-menu-trigger-for]="autocarro"><mat-icon >directions_bus</mat-icon> Autocarro</button>
+          <button mat-menu-item [mat-menu-trigger-for]="aviao"><mat-icon >flight</mat-icon>Avião</button>
+
+
+          <mat-menu #autocarro="matMenu">
+            <button mat-menu-item >Destinos</button>
+            <button mat-menu-item >Reservas</button>
+            <button mat-menu-item >Histórico</button>
+
+          </mat-menu>
+
+          <mat-menu #aviao="matMenu">
+            <button mat-menu-item >Destinos</button>
+            <button mat-menu-item >Reservas</button>
+            <button mat-menu-item >Histórico</button>
+
+          </mat-menu>
+
+
+        </mat-menu>
+      </div>
 
 
 
+      <div class="altura-menu-item">
+        <button mat-button [matMenuTriggerFor]="menu3"><mat-icon >place</mat-icon> <span mat-list-item>Destinos</span></button>
+        <mat-menu #menu3="matMenu">
+          <button mat-menu-item class="altura-menu-item"> Mais Visitados</button>
+          <button mat-menu-item>Provincia</button>
 
-      <a mat-list-item routerLink="/dashboard">Link 1</a>
-      <a mat-list-item href="#"></a>
-      <a mat-list-item href="#">Link 3</a>
+        </mat-menu>
+      </div>
+
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

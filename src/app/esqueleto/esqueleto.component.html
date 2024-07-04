@@ -3,17 +3,17 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar><img src="assets/travel.png" class="circular-image" alt=""></mat-toolbar>
+    <mat-toolbar><a routerLink="/"><img src="assets/travel.png" class="circular-image" alt=""></a></mat-toolbar>
     <mat-nav-list>
       <hr>
       <div >
-        <button mat-button [matMenuTriggerFor]="menu"><mat-icon >public</mat-icon> <span mat-list-item>Viagem </span></button>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon >public</mat-icon> <span mat-list-item>Ag.Viagem </span></button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Agendar</button>
+          <button mat-menu-item routerLink="/dashboard">Agendar</button>
           <button mat-menu-item>Pacotes</button>
           <button mat-menu-item>Reservas</button>
           <button mat-menu-item>Pagamentos</button>
-
+          <button mat-menu-item>Agência</button>
 
         </mat-menu>
         <br>
@@ -24,15 +24,20 @@
         <button mat-button [matMenuTriggerFor]="menu1"><mat-icon >hotel</mat-icon> <span mat-list-item>Hoteis</span></button>
         <mat-menu #menu1="matMenu">
           <button mat-menu-item> Lista de Hoteis</button>
+          <button mat-menu-item> Avaliações</button>
           <button mat-menu-item>Reserva de quartos</button>
+          <button mat-menu-item>Cancelar Reserva</button>
+          <button mat-menu-item> Histórico</button>
+
         </mat-menu>
       </div>
 
       <div>
         <button mat-button [matMenuTriggerFor]="menu2"><mat-icon >restaurant</mat-icon> <span mat-list-item>Restaurantes</span></button>
         <mat-menu #menu2="matMenu">
-          <button mat-menu-item> Lista de Reestaurantes</button>
+          <button mat-menu-item> Lista de Restaurantes</button>
           <button mat-menu-item>Menu</button>
+          <button mat-menu-item>Avaliações</button>
           <button mat-menu-item>Reserva</button>
 
         </mat-menu>
@@ -42,7 +47,10 @@
         <button mat-button [matMenuTriggerFor]="menu3"><mat-icon >event</mat-icon> <span mat-list-item>Evento</span></button>
         <mat-menu #menu3="matMenu">
           <button mat-menu-item class="altura-menu-item"> Lista de Eventos</button>
-          <button mat-menu-item>Reserva</button>
+          <button mat-menu-item>Publicar</button>
+          <button mat-menu-item>Cancelar Reserva</button>
+          <button mat-menu-item>Histórico</button>
+          <button mat-menu-item>Reservar</button>
 
         </mat-menu>
       </div>
@@ -84,6 +92,19 @@
       </div>
 
 
+
+      <div class="altura-menu-item">
+        <button mat-button [matMenuTriggerFor]="menu5"><mat-icon >map</mat-icon> <span mat-list-item>Itinerario</span></button>
+        <mat-menu #menu5="matMenu">
+          <button mat-menu-item class="altura-menu-item"> Criar</button>
+          <button mat-menu-item>Consultar</button>
+          <button mat-menu-item>Sugestão</button>
+
+
+        </mat-menu>
+      </div>
+
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -99,7 +120,6 @@
       }
       <span>Omokuyo</span>
     </mat-toolbar>
-  <ng-content></ng-content>
-
+  <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -8,7 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
 
 @Component({
@@ -25,7 +25,8 @@ import { MatMenu, MatMenuModule } from '@angular/material/menu';
     AsyncPipe,
     RouterLink,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    RouterOutlet
   ]
 })
 export class EsqueletoComponent {

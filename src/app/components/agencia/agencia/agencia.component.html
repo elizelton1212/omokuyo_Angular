@@ -1,0 +1,98 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<div>
+
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <p-floatLabel>
+        <input pInputText id="username" formControlName="name" />
+        <label for="username">Nome</label>
+    </p-floatLabel>
+
+<div>
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="city" />
+    <label for="username">Cidade</label>
+</p-floatLabel>
+
+</div>
+
+  <div>
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="province" />
+    <label for="username">Provincia</label>
+</p-floatLabel>
+
+</div>
+
+
+
+<div>
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="phone" />
+    <label for="username">nº Telefone</label>
+  </p-floatLabel>
+
+</div>
+
+
+
+<div>
+
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="email" />
+    <label for="username">email</label>
+  </p-floatLabel>
+
+</div>
+
+
+
+
+<div>
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="nib" />
+    <label for="username">Iban</label>
+  </p-floatLabel>
+
+
+</div>
+
+
+ <div>
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="country" />
+    <label for="username">Pais</label>
+  </p-floatLabel>
+
+
+ </div>
+
+
+ <div>
+
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="localization" />
+    <label for="username">Localização</label>
+  </p-floatLabel>
+
+
+ </div>
+
+
+    </mat-card-content>
+  </mat-card>
+
+<button type="submit">Cadastrar</button>
+</div>
+
+  <button type="submit" [disabled]="userForm.invalid">Add User</button>
+</form>
+
+
+

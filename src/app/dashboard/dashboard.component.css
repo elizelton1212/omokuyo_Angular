@@ -21,8 +21,17 @@
 }
 .alinhamentoInicial {
   width: 30%; /* Ajuste a largura conforme necessário, pode ser em % ou px */
-  height: 200px; /* Ajuste a altura conforme necessário */
-  margin-top: 20px;
-  margin: 20px 20px 0 20px;
+  height: 80px; /* Ajuste a altura conforme necessário */
+
+}
+
+.espacamento{
+  margin-left: 200px;
+  width:300px ;
+  height: 500px;
+}
+.tamnhoCard{
+  width: 250px;
+  height: 10px;
 }
 

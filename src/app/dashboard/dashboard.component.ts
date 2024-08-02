@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ChartModule } from 'angular-highcharts';
 import { Chart } from 'angular-highcharts';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -22,7 +23,8 @@ import { Chart } from 'angular-highcharts';
     MatButtonModule,
     MatCardModule,
     ChartModule,
-    MatCardModule
+    MatCardModule,
+    RouterModule
 
   ]
 })
@@ -34,7 +36,7 @@ export class DashboardComponent {
       type: 'pie'
     },
     title: {
-      text: 'Provincias +Visitadas'
+      text: ''
     },
     credits: {
       enabled: false

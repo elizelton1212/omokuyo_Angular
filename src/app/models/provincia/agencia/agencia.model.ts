@@ -6,5 +6,10 @@ phone?:string;
 email?:string;
 nib?:string;
 country?:string;
-localization?:Geolocation;
+geoposition?: {
+    Latitude: number,
+    Longitude: number
+  }
+
+
 }

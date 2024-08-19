@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Agencia } from '../../models/agencia.model';
-import { addDoc, collection, Firestore } from '@angular/fire/firestore';
+import { Agencia } from '../../models/provincia/agencia/agencia.model';
+import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +20,12 @@ console.log('Dados Cadastrados com sucesso', docref.id);
 }
 
 
+}
+
+
+getAllagence(): Observable<Agencia[]> {
+  const agenceCollection = collection(this.fs, 'users');
+  return collectionData(agenceCollection, { idField: 'id' }) as Observable<Agencia[]>;
 }
 
 

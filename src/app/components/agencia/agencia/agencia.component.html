@@ -1,98 +1,81 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-<div>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Cadastro de Agencias</h4>
+    <form class="forms-sample material-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" required="required">
+        <label for="input" class="control-label"  for="username">Nome</label><i class="bar"></i>
+      </div>
+      <div class="form-group">
+        <input type="text" required="required" formControlName="city">
+        <label for="input" class="control-label">Cidade</label><i class="bar"></i>
+      </div>
 
-  <mat-card appearance="outlined">
-    <mat-card-content>
-      <p-floatLabel>
-        <input pInputText id="username" formControlName="name" />
-        <label for="username">Nome</label>
-    </p-floatLabel>
 
-<div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button
+            class="btn btn-outline-primary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            {{ valorProvincia }}
+          </button>
+          <div class="dropdown-menu">
+            <a
+              *ngFor="let provincia of (provincia$ | async)"
+              class="dropdown-item"
+              (click)="onProvinciaSelected(provincia)">
+              {{ provincia.nome }}
+            </a>
+          </div>
+        </div>
+        <input type="text" class="form-control" formControlName="userForm.get('provincia')" hidden>
+      </div>
 
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="city" />
-    <label for="username">Cidade</label>
-</p-floatLabel>
 
+
+      <div class="form-group">
+        <input type="text" required="required"  formControlName="province">
+        <label for="input" class="control-label">Provincia</label><i class="bar"></i>
+      </div>
+
+
+      <div class="form-group">
+        <input type="text" required="required" formControlName="phone">
+        <label for="input" class="control-label">Telefone</label><i class="bar"></i>
+      </div>
+
+      <div class="form-group">
+        <input type="text" required="required" formControlName="email">
+        <label for="input" class="control-label">Email</label><i class="bar"></i>
+      </div>
+
+      <div class="form-group">
+        <input type="text" required="required" formControlName="nib">
+        <label for="input" class="control-label">IBAN</label><i class="bar"></i>
+      </div>
+
+
+      <div class="form-group">
+        <input type="text" required="required" formControlName="country">
+        <label for="input" class="control-label">País</label><i class="bar"></i>
+      </div>
+
+
+
+      <div class="form-group">
+        <input type="text" required="required" formControlName="localization">
+        <label for="input" class="control-label">País</label><i class="bar"></i>
+      </div>
+
+      <div class="form-group">
+        <button  mat-button class="btn btn-primary">Cadastrar</button>
+
+      </div>
+
+    </form>
+  </div>
 </div>
-
-  <div>
-
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="province" />
-    <label for="username">Provincia</label>
-</p-floatLabel>
-
-</div>
-
-
-
-<div>
-
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="phone" />
-    <label for="username">nº Telefone</label>
-  </p-floatLabel>
-
-</div>
-
-
-
-<div>
-
-
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="email" />
-    <label for="username">email</label>
-  </p-floatLabel>
-
-</div>
-
-
-
-
-<div>
-
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="nib" />
-    <label for="username">Iban</label>
-  </p-floatLabel>
-
-
-</div>
-
-
- <div>
-
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="country" />
-    <label for="username">Pais</label>
-  </p-floatLabel>
-
-
- </div>
-
-
- <div>
-
-  <p-floatLabel>
-    <input pInputText id="username" formControlName="localization" />
-    <label for="username">Localização</label>
-  </p-floatLabel>
-
-
- </div>
-
-
-    </mat-card-content>
-  </mat-card>
-
-<button type="submit">Cadastrar</button>
-</div>
-
-  <button type="submit" [disabled]="userForm.invalid">Add User</button>
-</form>
-
-
 

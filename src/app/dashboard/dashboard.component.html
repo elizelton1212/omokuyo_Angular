@@ -81,19 +81,19 @@ f            </div>
                       <div class="d-sm-flex justify-content-between align-items-start">
                         <div>
                           <h4 class="card-title card-title-dash">Agências de Viagens</h4>
-                          <p class="card-subtitle card-subtitle-dash">Provincia 
-                            <select name="" id=""  (change)="provinciaSelected($event)" >
+                          <p class="card-subtitle card-subtitle-dash">Provincia
+                            <select name="" id=""   >
                               <option  *ngFor="let item of (provincias |async)" value="{{item.id}}">{{item.nome}}</option>
                             </select>
-                            
+
                           </p>
-                         
+
                         </div>
 
                       </div>
                       <div class="table-responsive  mt-1">
                         <table class="table select-table">
-                        
+
                           <tbody>
                             <tr *ngFor="let item of (agencias |async)">
                               <td>
@@ -101,18 +101,18 @@ f            </div>
                                   <img src="{{item.image}}" alt="">
                                   <div>
                                     <h6>{{item.name}}</h6>
-                                    
+
                                   </div>
                                 </div>
                               </td>
                               <td>
                                 <h6>{{item.email}}</h6>
-                                
+
                               </td>
-                             
-                             
+
+
                             </tr>
-                            
+
                           </tbody>
                         </table>
                       </div>
